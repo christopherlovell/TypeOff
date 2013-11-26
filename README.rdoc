@@ -1,28 +1,12 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Some instructions to get this base code working.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* install rails. This package gives you pretty much everything you're going to need: <i>http://railsinstaller.org/en</i>
+* open a terminal and type <tt>rails --version</tt>. this should verify that everything has installed correctly
+* go to <tt>https://github.com/polyphant1/TypeOff</tt> , click on the branch button near the top on the left and choose the second branch rails_learn
+* copy the SSH clone URL (sidebar on the right) and use it in the following terminal command (in the directory you want to clone it to): <tt>git clone <ssh url></tt>
+* Check it by typing git status. it should show you the branch name.
+* open a new terminal, navigate to the TypeOff directory, and run <tt>rails server</tt>
+* Open your browser and run <i>http://localhost:3000/posts</i>
+* it should work (!)

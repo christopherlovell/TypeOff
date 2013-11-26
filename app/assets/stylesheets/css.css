@@ -1,0 +1,152 @@
+html {
+	background-color:#B2E3E9;
+	color:#4097BC;
+	padding:0;
+	margin:0;
+	top:0;
+	font-family:apercu;
+}
+
+body {
+	margin:0;
+	padding:0;
+}
+
+a {
+	text-decoration:none;
+	color:white;
+}
+
+.logo {	
+	text-align:center;
+	padding:35px;
+	top:0;
+}
+
+nav {
+	text-align:center;
+	font-size:12px;
+	color:#4097BC;
+	cursor: pointer;
+	padding-bottom: 30px;
+}
+
+nav:hover {
+	color:#63ADCC;
+}
+
+nav span {
+	border-bottom:solid 1px;
+}
+
+
+.container {
+	display:block;
+}
+
+#howitworks {
+	height:150px;
+	display:none;
+	padding: 0 11%;
+}
+
+#howitworks p {
+	font-size: 12px;
+}
+
+#thirty {
+	padding-left: 1.232%;
+	float:left;
+	width:38.46%;
+}
+
+h5 {
+	margin-top: 12px;
+}
+
+#fourteen {
+	padding-left: 1.232%;
+	float:left;
+	width:18.46%;
+}
+
+.half {
+	display:inline-block;
+	float:left;
+	width:50%;
+}
+
+.info {
+	display:inline-block;
+	width:14.5%;
+	float:left;
+	padding-left: 8.5%;
+	height:110px;
+	font-size:12px;
+}
+
+.heading {
+	display:inline-block;
+	width:65.7%;
+	float:left;
+	height:110px;
+}
+
+.champ {
+	padding-right:10%;
+	padding-left:1.3%;
+}
+
+.challenger {
+	padding-right:1.3%;
+	padding-left:10%;
+}
+
+textarea {
+	background-color:#B2E3E9;
+	border:0;
+	color:white;
+	resize: none;
+	padding-top:0;
+	margin-top:0; 
+	overflow:hidden;
+}
+
+textarea.heading {
+	font-size:50px;
+	white-space: nowrap;
+	width:100%;
+}
+
+textarea.heading:focus {
+	outline:none;
+}
+
+.text {
+	display:inline-block;
+	width:65.7%;
+	float:left;
+	height:300px;
+	overflow: hidden;
+}
+
+textarea.text {
+	font-size:18px;
+	width:100%;
+	overflow:hidden;
+}
+
+textarea.text:focus {
+	outline:none;
+}
+
+.votebutton {
+	display:inline-block;
+	padding:5px;
+	background-color:#89C1D9;
+	font-size:14px;
+}
+
+.votebutton:active {
+	background-color:#4097BC;
+}

@@ -1,20 +1,22 @@
 html {
-	background-color:#B2E3E9;
-	color:#4097BC;
+	background-color:#FFEBA0;
+	color:#3A3A3A;
 	padding:0;
 	margin:0;
 	top:0;
 	font-family:apercu;
+	height:100%;
 }
 
 body {
 	margin:0;
 	padding:0;
+	height:100%;
 }
 
 a {
 	text-decoration:none;
-	color:white;
+	color:#3A3A3A;
 }
 
 .logo {	
@@ -26,13 +28,13 @@ a {
 nav {
 	text-align:center;
 	font-size:12px;
-	color:#4097BC;
+	color:#3A3A3A;
 	cursor: pointer;
 	padding-bottom: 30px;
 }
 
 nav:hover {
-	color:#63ADCC;
+	color:#3A3A3A;
 }
 
 nav span {
@@ -42,6 +44,7 @@ nav span {
 
 .container {
 	display:block;
+	height:calc(100% - 160px);
 }
 
 #howitworks {
@@ -74,15 +77,29 @@ h5 {
 	display:inline-block;
 	float:left;
 	width:50%;
+	height:100%;
 }
 
 .info {
 	display:inline-block;
-	width:14.5%;
+	width:calc(14.5% - 5px);
 	float:left;
-	padding-left: 8.5%;
 	height:110px;
 	font-size:12px;
+}
+
+.right {
+	padding-left: 5px;
+	padding-right:8.5%;
+}
+
+.left {
+	padding-left: 8.5%;
+	padding-right: 5px;
+}
+
+.info a {
+	border-bottom: 1px dashed;
 }
 
 .heading {
@@ -103,9 +120,9 @@ h5 {
 }
 
 textarea {
-	background-color:#B2E3E9;
+	background-color:#FFEBA0;
 	border:0;
-	color:white;
+	color:#3A3A3A;
 	resize: none;
 	padding-top:0;
 	margin-top:0; 
@@ -126,13 +143,14 @@ textarea.heading:focus {
 	display:inline-block;
 	width:65.7%;
 	float:left;
-	height:300px;
+	height:calc(100% - 110px);
 	overflow: hidden;
 }
 
 textarea.text {
 	font-size:18px;
 	width:100%;
+	height:90%;
 	overflow:hidden;
 }
 
@@ -143,10 +161,26 @@ textarea.text:focus {
 .votebutton {
 	display:inline-block;
 	padding:5px;
-	background-color:#89C1D9;
+	background-color:#FFF2C2;
 	font-size:14px;
+	border-bottom:3px solid #FFE070;
+}
+
+.right .votebutton {
+	float:right;
 }
 
 .votebutton:active {
-	background-color:#4097BC;
+	background-color:#FFE070;
+	margin-top:3px;
+	border-bottom:0;
+}
+
+.try {
+	font-size: 12px;
+}
+
+.right .try {
+	float:right;
+	text-align: right;
 }

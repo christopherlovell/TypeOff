@@ -2,40 +2,52 @@
 
 <div class="logo"><a href="#"><%= image_tag("typeofflogo.png", :alt => "logo") %></a></div>
 	<nav id="nav"><span>How it works</span></nav>
-	<div class="container">
-		<div id="howitworks">
-			<div id="thirty"><h5>What is Type Off?</h5><p>Type Off is a type based game in which two web fonts go head to head ...</p></div>
-			<div id="fourteen"><h5>What you see</h5><p>The Champions (left)<br>The Challengers (right)<br>Headings (top)<br>Text (bottom)</p></div>
-			<div id="fourteen"><h5>What you do</h5><p>Vote for your favourite Heading and Text fonts by clicking the adjacent vote count buttons. </P></div>
-			<div id="fourteen"><h5>What happens next</h5><p>Each round lasts one day. At the end of the day, the font with the most votes in each category becomes the champion.</p></div>
+		<div class="container">
+			
+			<!-- HOW IT WORKS -->
+
+			<div id="howitworks">
+				<div id="thirty"><h5>What is Type Off?</h5><p>A daily source of web font inspiration. Type Off is a type based game in which two web fonts go head to head ...</p></div>
+				<div id="fourteen"><h5>What you see</h5><p>The Champions (left)<br>The Challengers (right)<br>Headings (top)<br>Text (bottom)</p></div>
+				<div id="fourteen"><h5>What you do</h5><p>Vote for your favourite Heading and Text fonts by clicking the adjacent vote count buttons. </p></div>
+				<div id="fourteen"><h5>What happens next</h5><p>Each round lasts one day. At the end of the day, the font with the most votes in each category becomes the champion.</p></div>
+			</div>
+
+			<!-- LEFT -->
+
+			<div class="half">
+				<div class="info left">
+					<a href="#"><div class="votebutton">Apercu</div></a><p class="try">Try on <a href="http://fontdeck.com/typeface/apercu" target="_blank">Font Deck</p></a>
+				</div>
+				<div class="heading champ">
+					<textarea class="heading" id="headingchamp" rows="1">Apercu</textarea>
+				</div>
+				<div class="info left">
+					<a href="#"><div class="votebutton">Minion</div></a><p class="try">Try on <a href="https://typekit.com/fonts/minion-pro" target="_blank">typekit</p></a>
+				</div>
+				<div class="text champ">
+					<textarea class="text" id="textchamp" rows="100" spellcheck="false">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. </textarea>
+				</div>
+			</div>	
+
+			<!-- RIGHT -->
+
+			<div class="half">
+				<div class="heading challenger">
+					<textarea class="heading" id="challenger" rows="1">Futura</textarea>
+				</div>
+				<div class="info right">
+					<a href="#"><div class="votebutton">Futura</div></a><p class="try">Try on <a href="http://www.myfonts.com/fonts/bitstream/futura/" target="_blank">My Fonts</a></p>
+				</div>
+				<div class="text challenger">
+					<textarea class="text" id="challenger" spellcheck="false">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. </textarea>
+				</div>
+				<div class="info right">
+					<a href="#"><div class="votebutton">Futura</div></a><p class="try">Try on <a href="http://www.myfonts.com/fonts/bitstream/futura/" target="_blank">My Fonts</a></p>
+				</div>
+				</div>
+			</div>	
+
+			<!-- -->
+
 		</div>
-		<div class="half">
-			<div class="info">
-				<a href="#"><div class="votebutton">7439</div></a><p>Apercu</p>
-			</div>
-			<div class="heading champ">
-				<textarea class="heading" id="headingchamp" rows="1">Apercu</textarea>
-			</div>
-			<div class="info">
-				<a href="#"><div class="votebutton">9813</div></a><p>Minion</p>
-			</div>
-			<div class="text champ">
-  			<textarea class="text" id="textchamp" rows="100" spellcheck="false">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. </textarea>
-			</div>
-		</div>	
-		<div class="half">
-			<div class="heading challenger">
-				<textarea class="heading" id="challenger" rows="1">Futura</textarea>
-			</div>
-			<div class="info">
-				<a href="#"><div class="votebutton">8157</div></a><p>Futura</p>
-			</div>
-			<div class="text challenger">
-				<textarea class="text" id="challenger" spellcheck="false">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. </textarea>
-			</div>
-			<div class="info">
-				<a href="#"><div class="votebutton">5721</div></a><p>Futura</p>
-			</div>
-			</div>
-		</div>	
-	</div>

@@ -1,0 +1,23 @@
+<h1> List Fonts </h1>
+
+<%= link_to 'New Font', new_font_path %><br><br>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Site</th>
+    <th>URL</th>
+    <th></th>
+    <th></th>
+  </tr>
+  
+  <% @fonts.each do |font| %>
+    <tr>
+      <td><%= font.title %></td>
+      <td><%= font.linktitle %></td>
+      <td><%= font.link %></td>
+      <td><%= link_to 'Show', font %></td>
+      <td><%= link_to 'Edit', edit_font_path(font) %></td>
+    </tr>
+  <% end %>  
+</table>

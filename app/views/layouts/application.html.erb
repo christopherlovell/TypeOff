@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Type Off</title>
-		<%= stylesheet_link_tag "home" %>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<title>Type Off <%= yield(:title) %></title>
+		<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script> 
 		$(document).ready(function(){
   		$("#nav").click(function(){
-    	$("#howitworks").slideToggle("slow");
+    	  $("#howitworks").slideToggle("slow");
   		});
 		});
 		</script>

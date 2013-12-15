@@ -33,6 +33,14 @@ class FontsController < ApplicationController
       render 'edit'
     end
   end
+  
+  def destroy
+    @font = Font.find(params[:id])
+    
+    @font.destroy
+    redirect_to fonts_path
+  end
+
     
   private
     def font_params

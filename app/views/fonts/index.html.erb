@@ -18,6 +18,7 @@
       <td><%= font.link %></td>
       <td><%= link_to 'Show', font %></td>
       <td><%= link_to 'Edit', edit_font_path(font) %></td>
+      <td><%= link_to 'Destroy', font_path(font), method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>  
 </table>

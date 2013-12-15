@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @font = Font.first(:offset => rand(Font.count))
+    @font_1 = Font.first(:offset => rand(Font.count))
+    @font_2 = Font.first(:offset => rand(Font.count))
   end
 end

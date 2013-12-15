@@ -17,9 +17,9 @@
       
 			<div class="votearea">
 				<div class="info">
-					<p class="try">Try on <a href="http://fontdeck.com/typeface/apercu" target="_blank">Font Deck</p></a>
+					<%= @font_1.title %><p class="try">Try on <%= link_to @font_1.linktitle, @font_1.link%></p></a>
 				</div>
-				<textarea id="headingchamp" rows="1">Apercu</textarea>
+				<textarea id="headingchamp" rows="1"><%= @font_1.title %></textarea>
 				<div class="controls">Hello</div>
 			</div>	
 
@@ -34,9 +34,9 @@
 
 			<div class="votearea">
 				<div class="info">
-					Futura<p class="try">Try on <a href="http://www.myfonts.com/fonts/bitstream/futura/" target="_blank">My Fonts</a></p>
+					<%= @font_2.title %><p class="try">Try on <%= link_to @font_2.linktitle, @font_2.link%></p></a>
 				</div>
-				<textarea id="challenger" rows="1">Futura</textarea>
+				<textarea id="challenger" rows="1"><%= @font_2.title%></textarea>
 				<div class="controls">
 					<input type="range" min="1" max="100">
 				</div>

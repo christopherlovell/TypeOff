@@ -27,7 +27,7 @@ class FontsController < ApplicationController
   
   def update
     @font = Font.find(params[:id])
-    if @font.update(params[:font].permit(:title,:text))
+    if @font.update(params[:font].permit(:title,:linktitle,:link))
       redirect_to @font
     else
       render 'edit'

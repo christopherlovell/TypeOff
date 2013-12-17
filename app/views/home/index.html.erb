@@ -1,4 +1,4 @@
-<% provide(:title, 'Home') %>
+<% provide(:title, 'Home | Index') %>
 		<nav><span id="nav">How it works</span>&emsp;<span><a href="leaderboard.html">Leaderboard</a></span></nav>
 		<div class="container">
 			
@@ -17,7 +17,7 @@
       
 			<div class="votearea">
 				<div class="info">
-					<%= @font_1.title %><p class="try">Try on <%= link_to @font_1.linktitle, @font_1.link%></p></a>
+					<%= @font_1.title %><p class="try">Try on <%= link_to @font_1.linktitle, @font_1.link%></p>
 				</div>
 				<textarea id="headingchamp" rows="1"><%= @font_1.title %></textarea>
 				<div class="controls">Hello</div>
@@ -26,7 +26,7 @@
 			<!-- middle -->
 
 			<div class="middle">
-				<div class="prevnext prev"></div><div class="divider"></div><div class="prevnext next"></div>
+ 				<%= link_to "", "", :method => "get", :class => "prevnext prev" %><div class="divider"></div><%= link_to "", "", :method => "get", :class => "prevnext next" %>
 			</div>
 
 
@@ -34,7 +34,7 @@
 
 			<div class="votearea">
 				<div class="info">
-					<%= @font_2.title %><p class="try">Try on <%= link_to @font_2.linktitle, @font_2.link%></p></a>
+					<%= @font_2.title %><p class="try">Try on <%= link_to @font_2.linktitle, @font_2.link%></p>
 				</div>
 				<textarea id="challenger" rows="1"><%= @font_2.title%></textarea>
 				<div class="controls">

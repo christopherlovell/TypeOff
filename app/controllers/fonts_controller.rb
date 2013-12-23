@@ -34,6 +34,12 @@ class FontsController < ApplicationController
     end
   end
   
+  def vote
+    @font = Font.find(params[:id])
+    
+    @font.update_attribute("votes",votes+1)
+  end
+  
   def destroy
     @font = Font.find(params[:id])
     
@@ -41,7 +47,6 @@ class FontsController < ApplicationController
     redirect_to fonts_path
   end
 
-    
   private
     def font_params
       params.require(:font).permit(:title, :linktitle, :link)

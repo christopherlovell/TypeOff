@@ -4,6 +4,7 @@ class CreateFonts < ActiveRecord::Migration
       t.string :title
       t.string :link
       t.string :linktitle
+      t.integer :votes
 
       t.timestamps
     end

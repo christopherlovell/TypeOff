@@ -12,16 +12,14 @@
 			</div>
 
 			<!-- top -->
-
       
-      
-			<div class="votearea">
+      <%= link_to "", {controller: "font"}, :action => "vote", class: "votearea" %>
 				<div class="info">
 					<%= @font_1.title %><p class="try">Try on <%= link_to @font_1.linktitle, @font_1.link%></p>
 				</div>
 				<textarea id="headingchamp" rows="1"><%= @font_1.title %></textarea>
 				<div class="controls">Hello</div>
-			</div>	
+			<% end %>
 
 			<!-- middle -->
 

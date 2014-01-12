@@ -5,9 +5,7 @@ class HomeController < ApplicationController
   end
   
   def leaderboard
-    @fonts = Font.all
-    
-    
+    @fonts = Font.all    
   end
-  
+
 end

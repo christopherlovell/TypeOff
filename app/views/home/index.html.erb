@@ -1,47 +1,89 @@
-<% provide(:title, 'Home | Index') %>
-		<nav><span id="nav">How it works</span>&emsp;<span><a href="leaderboard.html">Leaderboard</a></span></nav>
-		<div class="container">
-			
-			<!-- HOW IT WORKS -->
+<% provide(:title, '| Home | Index') %>
 
-			<div id="howitworks">
-				<div id="thirty"><h5>What is Type Off?</h5><p>A daily source of web font inspiration. Type Off is a type based game in which two web fonts go head to head ...</p></div>
-				<div id="fourteen"><h5>What you see</h5><p>The Champions (left)<br>The Challengers (right)<br>Headings (top)<br>Text (bottom)</p></div>
-				<div id="fourteen"><h5>What you do</h5><p>Vote for your favourite Heading and Text fonts by clicking the adjacent vote count buttons. </p></div>
-				<div id="fourteen"><h5>What happens next</h5><p>Each round lasts one day. At the end of the day, the font with the most votes in each category becomes the champion.</p></div>
-			</div>
-
-			<!-- top -->
-
+<script> 
+	$(document).ready(function(){
       
+    $("#try").hide();
+    $("#info").hide();
+    $("#controls").hide();
+  		
+    $("#title").on("click",function(){
+  	  $(this).css("opacity", 1);
+  	  $("#upper").css("opacity", 0.5);
+  	  $("#lower").css("opacity", 0.5);
+      $("#headingchamp").html('<%= h @font_1.title %>');
+      $("#challenger").html('<%= h @font_2.title %>');
+  	});
       
-			<div class="votearea">
-				<div class="info">
-					<%= @font_1.title %><p class="try">Try on <%= link_to @font_1.linktitle, @font_1.link%></p>
-				</div>
-				<textarea id="headingchamp" rows="1"><%= @font_1.title %></textarea>
-				<div class="controls">Hello</div>
-			</div>	
+    $("#heading_vote").on("click",function(){
+      $.ajax({type: "POST", url: 'fonts/'+'<%= @font_1.id %>'+'/vote'});
+      $(".text").html("Vote");
+    });
+      
+  	$("#upper").on("click",function(){
+  	  $(this).css("opacity", 1);
+  	  $("#title").css("opacity", 0.5);
+  	  $("#lower").css("opacity", 0.5);
+  	  $(".text").html("ABCDEFGH<br>IJKLMNOPQR<br>STUVWXYZ");
+  	});
+      
+  	$("#lower").on("click",function(){
+  	  $(this).css("opacity", 1);
+  	  $("#title").css("opacity", 0.5);
+  	  $("#upper").css("opacity", 0.5);
+  	  $(".text").html("abcdefgh<br>ijklnopqr<br>stuvwxyz");
+    });
+    
+    $("#plus").click(function(){
+      $("#controls").slideToggle("slow");
+    });
+    
+    $("#i").on("click",function(){
+      $("#try").fadeToggle();
+      $("#info").fadeToggle();
+    });
+    
+  });
+</script>
 
-			<!-- middle -->
+<div id="info">
+  <div class="info top"><%= @font_1.title %></div>
+  <div class="info bottom"><%= @font_2.title %></div>
+</div>
+  
+<div id="try">
+  <p class="try top">Try on <%= link_to @font_1.linktitle, @font_1.link%></p>
+  <p class="try bottom">Try on <%= link_to @font_2.linktitle, @font_2.link%></p>
+</div>
 
-			<div class="middle">
- 				<%= link_to "", "", :method => "get", :class => "prevnext prev" %><div class="divider"></div><%= link_to "", "", :method => "get", :class => "prevnext next" %>
-			</div>
+<div class="container">
 
-
-			<!-- bottom -->
-
-			<div class="votearea">
-				<div class="info">
-					<%= @font_2.title %><p class="try">Try on <%= link_to @font_2.linktitle, @font_2.link%></p>
-				</div>
-				<textarea id="challenger" rows="1"><%= @font_2.title%></textarea>
-				<div class="controls">
-					<input type="range" min="1" max="100">
-				</div>
-			</div>	
-
-			<!-- -->
-
-		</div>
+  <!-- top -->
+      
+  <div class="votearea" id="heading_vote">
+		<div class="text" id="headingchamp" rows="1"><%= @font_1.title %></div>
+  </div>
+      
+	<!-- middle -->
+      
+	<div class="middle">
+ 		<div class="buttons" id="i"><%= image_tag "i.png" %></div>
+    <div class="divider"></div>
+    <div class="buttons" id="plus"><%= image_tag "plus.png" %></div>
+    <%= link_to "", "", :method => "get", :class => "next" %>
+    <div class="controls" id="controls">
+      <div class="controlbutton"><p id="title">Title</p></div>
+      <div class="controlbutton"><p id="upper">ABC</p></div>
+      <div class="controlbutton"><p id="lower">abc</p></div>
+    </div>
+	</div>
+      
+	<!-- bottom -->
+    
+  <div class="votearea" id="challenger_vote">
+		<div class="text" id="challenger" rows="1"><%= @font_2.title%></div>
+  </div>
+      
+	<!-- -->
+      
+</div>

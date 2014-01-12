@@ -1,3 +1,5 @@
+<br><br><br><br><br><br><br><br>
+
 <%= link_to 'New Font', new_font_path %> | 
 <%= link_to 'List Fonts', fonts_path %> | 
 <%= link_to 'Edit Font', edit_font_path %>
@@ -15,4 +17,9 @@
 <p>
   <strong>Link URL:</strong>
   <%= @font.link %>
+</p>
+
+<p>
+  <strong>Votes</strong>
+  <%= @font.votes %>
 </p>

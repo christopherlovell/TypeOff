@@ -3,21 +3,16 @@
 	<head>
 		<title>Type Off <%= yield(:title) %></title>
 		<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag :defaults %>
     <%= csrf_meta_tags %>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script> 
-		$(document).ready(function(){
-  		$("#nav").click(function(){
-    	  $("#howitworks").slideToggle("slow");
-  		});
-		});
-		</script>
 	</head>
   <body>
-    <div class="logo"><a href="#"><%= image_tag "typeofflogo.png" %></a></div>
-
+    <div class="logobg"></div>
+    <div class="logo"><a href="#"><%= image_tag "logo.png" %></a></div>
+    <nav><span><a href="leaderboard.html">Leaderboard</a></span></nav>
+    <%= javascript_include_tag "application" %>
     <%= yield %>
-
+  
   </body>
 </html>

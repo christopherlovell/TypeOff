@@ -1,16 +1,18 @@
+<br><br><br><br><br><br><br><br>
+
 <h1>Editing Font entry</h1>
- 
+
 <%= form_for :font, url: font_path(@font), method: :patch do |f| %>
   <% if @font.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@font.errors.count, "error") %> prohibited
-      this font from being saved:</h2>
-    <ul>
-    <% @font.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
+    <div id="error_explanation">
+      <h2><%= pluralize(@font.errors.count, "error") %> prohibited
+        this font from being saved:</h2>
+      <ul>
+      <% @font.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
   <% end %>
   <p>
     <%= f.label :title %><br>

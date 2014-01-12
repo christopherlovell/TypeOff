@@ -1,4 +1,5 @@
 class FontsController < ApplicationController
+  
   def new
     @font = Font.new
   end
@@ -15,6 +16,17 @@ class FontsController < ApplicationController
   
   def show
     @font = Font.find(params[:id])
+  end
+  
+  def vote
+    @font = Font.find(params[:id])
+    
+    @font.update_attribute("votes",votes+1)    
+    
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
   
   def index
@@ -34,12 +46,6 @@ class FontsController < ApplicationController
     end
   end
   
-  def vote
-    @font = Font.find(params[:id])
-    
-    @font.update_attribute("votes",votes+1)
-  end
-  
   def destroy
     @font = Font.find(params[:id])
     
@@ -49,7 +55,7 @@ class FontsController < ApplicationController
 
   private
     def font_params
-      params.require(:font).permit(:title, :linktitle, :link)
+      params.require(:font).permit(:title, :linktitle, :link, :votes)
     end
   
 end

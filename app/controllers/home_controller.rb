@@ -7,5 +7,5 @@ class HomeController < ApplicationController
   def leaderboard
     @fonts = Font.all    
   end
-  
+
 end

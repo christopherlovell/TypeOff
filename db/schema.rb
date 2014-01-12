@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131214144610) do
+ActiveRecord::Schema.define(version: 20131223143500) do
 
   create_table "fonts", force: true do |t|
     t.string   "title"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20131214144610) do
     t.string   "linktitle"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "votes"
   end
 
 end

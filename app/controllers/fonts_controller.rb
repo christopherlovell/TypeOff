@@ -1,5 +1,7 @@
 class FontsController < ApplicationController
   
+  protect_from_forgery except: :index
+  
   def new
     @font = Font.new
   end
@@ -18,18 +20,29 @@ class FontsController < ApplicationController
     @font = Font.find(params[:id])
   end
   
+  #increment votes variable for given Font
   def vote
+    
     @font = Font.find(params[:id])
     
-    @font.update_attribute("votes",votes+1)    
+    @font.increment!(:votes)
     
     respond_to do |format|
-      format.html
-      format.js
+      format.js {render :json => params[:id]}
     end
+      
+    
+    #respond_to do |format|
+      #format.html
+      #format.js
+    #end
   end
   
   def index
+    @fonts = Font.all
+  end
+  
+  def leaderboard
     @fonts = Font.all
   end
   

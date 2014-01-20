@@ -2,11 +2,11 @@ TypeOff::Application.routes.draw do
   
   root to: "home#index" 
   
-  resources :fonts do
-    member do
-      post :vote
-    end
-  end
+  resources :fonts
+  
+  get '/leaderboard' => 'home#leaderboard'
+  
+  post '/fonts/:id/vote' => 'fonts#vote', as: :vote
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

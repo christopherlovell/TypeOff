@@ -1,5 +1,7 @@
 <% provide(:title, '| Home | Index') %>
 
+<nav><span><a href="/leaderboard">Leaderboard</a></span></nav>
+
 <script> 
 	$(document).ready(function(){
       
@@ -15,9 +17,14 @@
       $("#challenger").html('<%= h @font_2.title %>');
   	});
       
-    $("#heading_vote").on("click",function(){
-      $.ajax({type: "POST", url: 'fonts/'+'<%= @font_1.id %>'+'/vote'});
-      $(".text").html("Vote");
+    $("#heading_vote").click(function(){
+      
+      var fontid='<%= h @font_1.id %>'
+      $(".text").html(fontid);
+      $.ajax({type: "POST", url: 'fonts/'+fontid+'/vote', success: function(){
+          $(".text").html('voted');
+        }
+      });
     });
       
   	$("#upper").on("click",function(){
@@ -59,11 +66,11 @@
 <div class="container">
 
   <!-- top -->
-      
+
   <div class="votearea" id="heading_vote">
 		<div class="text" id="headingchamp" rows="1"><%= @font_1.title %></div>
   </div>
-      
+  
 	<!-- middle -->
       
 	<div class="middle">

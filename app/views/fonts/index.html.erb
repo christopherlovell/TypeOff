@@ -7,8 +7,10 @@
 <table>
   <tr>
     <th>Title</th>
-    <th>Site</th>
-    <th>URL</th>
+    <th>ID</th>
+    <th>Link</th>
+    <th>Source</th>
+    <th>Style</th>
     <th>Votes</th>
     <th></th>
     <th></th>
@@ -18,8 +20,10 @@
   <% @fonts.each do |font| %>
     <tr>
       <td><%= font.title %></td>
-      <td><%= font.linktitle %></td>
+      <td><%= font.name %></td>
       <td><%= font.link %></td>
+      <td><%= font.source %></td>
+      <td><%= font.style %></td>
       <td><%= font.votes %></td>
       <td><%= link_to 'Show', font_path(font) %></td>
       <td><%= link_to 'Edit', edit_font_path(font) %></td>

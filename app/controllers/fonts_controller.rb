@@ -22,7 +22,6 @@ class FontsController < ApplicationController
   
   #increment votes variable for given Font
   def vote
-    
     @font = Font.find(params[:id])
     
     @font.increment!(:votes)
@@ -30,12 +29,6 @@ class FontsController < ApplicationController
     respond_to do |format|
       format.js {render :json => params[:id]}
     end
-      
-    
-    #respond_to do |format|
-      #format.html
-      #format.js
-    #end
   end
   
   def index
@@ -52,7 +45,7 @@ class FontsController < ApplicationController
   
   def update
     @font = Font.find(params[:id])
-    if @font.update(params[:font].permit(:title,:linktitle,:link))
+    if @font.update(params[:font].permit(:name,:title,:link,:source,:style))
       redirect_to @font
     else
       render 'edit'
@@ -68,7 +61,7 @@ class FontsController < ApplicationController
 
   private
     def font_params
-      params.require(:font).permit(:title, :linktitle, :link, :votes)
+      params.require(:font).permit(:name,:title,:link,:source,:style,:votes)
     end
   
 end

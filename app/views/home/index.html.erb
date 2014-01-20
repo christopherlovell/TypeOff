@@ -2,56 +2,7 @@
 
 <nav><span><a href="/leaderboard">Leaderboard</a></span></nav>
 
-<script> 
-	$(document).ready(function(){
-      
-    $("#try").hide();
-    $("#info").hide();
-    $("#controls").hide();
-  		
-    $("#title").on("click",function(){
-  	  $(this).css("opacity", 1);
-  	  $("#upper").css("opacity", 0.5);
-  	  $("#lower").css("opacity", 0.5);
-      $("#headingchamp").html('<%= h @font_1.title %>');
-      $("#challenger").html('<%= h @font_2.title %>');
-  	});
-      
-    $("#heading_vote").click(function(){
-      
-      var fontid='<%= h @font_1.id %>'
-      $(".text").html(fontid);
-      $.ajax({type: "POST", url: 'fonts/'+fontid+'/vote', success: function(){
-          $(".text").html('voted');
-        }
-      });
-    });
-      
-  	$("#upper").on("click",function(){
-  	  $(this).css("opacity", 1);
-  	  $("#title").css("opacity", 0.5);
-  	  $("#lower").css("opacity", 0.5);
-  	  $(".text").html("ABCDEFGH<br>IJKLMNOPQR<br>STUVWXYZ");
-  	});
-      
-  	$("#lower").on("click",function(){
-  	  $(this).css("opacity", 1);
-  	  $("#title").css("opacity", 0.5);
-  	  $("#upper").css("opacity", 0.5);
-  	  $(".text").html("abcdefgh<br>ijklnopqr<br>stuvwxyz");
-    });
-    
-    $("#plus").click(function(){
-      $("#controls").slideToggle("slow");
-    });
-    
-    $("#i").on("click",function(){
-      $("#try").fadeToggle();
-      $("#info").fadeToggle();
-    });
-    
-  });
-</script>
+<% javascript 'index' %>
 
 <div id="info">
   <div class="info top"><%= @font_1.title %></div>
@@ -59,8 +10,8 @@
 </div>
   
 <div id="try">
-  <p class="try top">Try on <%= link_to @font_1.linktitle, @font_1.link%></p>
-  <p class="try bottom">Try on <%= link_to @font_2.linktitle, @font_2.link%></p>
+  <p class="try top">Try on <%= link_to @font_1.source, @font_1.link%></p>
+  <p class="try bottom">Try on <%= link_to @font_2.source, @font_2.link%></p>
 </div>
 
 <div class="container">
@@ -68,7 +19,9 @@
   <!-- top -->
 
   <div class="votearea" id="heading_vote">
-		<div class="text" id="headingchamp" rows="1"><%= @font_1.title %></div>
+		<div id="headingchamp" rows="1">
+      <span class="text" value=<%= @font_1.source %> href=<%= @font_1.link %> id=<%= @font_1.name %> style=<%= @font_1.style %> ><%= @font_1.title %></span>
+    </div>
   </div>
   
 	<!-- middle -->
@@ -88,7 +41,9 @@
 	<!-- bottom -->
     
   <div class="votearea" id="challenger_vote">
-		<div class="text" id="challenger" rows="1"><%= @font_2.title%></div>
+		<div id="headingchamp" rows="1">
+      <span class="text" value=<%= @font_2.source %> href=<%= @font_2.link %> id=<%= @font_2.name %> style=<%= @font_2.style %> ><%= @font_2.title %></span>
+    </div>
   </div>
       
 	<!-- -->

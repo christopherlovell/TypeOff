@@ -11,15 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131223143500) do
+ActiveRecord::Schema.define(version: 20131214144610) do
 
   create_table "fonts", force: true do |t|
-    t.string   "title"
-    t.string   "link"
-    t.string   "linktitle"
+    t.string   "title",      null: false
+    t.string   "name",       null: false
+    t.string   "link",       null: false
+    t.string   "source",     null: false
+    t.string   "style",      null: false
+    t.integer  "votes"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "votes"
   end
 
 end

@@ -3,126 +3,32 @@
 
 <nav><span><a href="/#">New Round</a></span></nav>
 
-		<script> 
-		$(document).ready(function(){
-  		$("#nav").click(function(){
-    	$("#howitworks").slideToggle("slow");
-  		});
-		});
-		</script>
-		<script>
-		$(document).ready(function(){
-  		$("#headings span").on("click",function(){
-    	$("#heading").css("font-family", $(this).attr("id"));;
-    	$("#heading").html($(this).text());;
-    	$("#trybutton").attr("href", $(this).attr("href"));;
-    	$("#trybutton").html("Try on " + $(this).attr("value"));;
-  		});
-		});
-		</script>
-		<script>
-		$(document).ready(function(){
-  		$("#texttable span").on("click",function(){
-    	$("#text").css("font-family", $(this).attr("id"));;
-  		});
-		});
-		</script>
-		<script>
-		$(document).ready(function(){
-  		$("#texttablelink").on("click",function(){
-    	$("#headings").css("opacity", "0");;
-    	$("#texttable").css("opacity", "1");;
-    	$("#headings").css("z-index", "0");;
-    	$("#texttable").css("z-index", "1");;
-    	$("#headingstable").css("opacity", "0.5");;
-    	$("#texttablelink").css("opacity", "1");;
-  		});
-		});
-		</script>
-		<script>
-		$(document).ready(function(){
-  		$("#headingstable").on("click",function(){
-    	$("#headings").css("opacity", "1");;
-    	$("#texttable").css("opacity", "0");;
-    	$("#headings").css("z-index", "1");;
-    	$("#texttable").css("z-index", "0");;
-    	$("#headingstable").css("opacity", "1");;
-    	$("#texttablelink").css("opacity", "0.5");;
-  		});
-		});
-		</script>
+<% javascript 'leaderboard' %>
 
+<div class="container">
 
-
-<script>
-		$(document).ready(function() { 
-    // call the tablesorter plugin 
-    $("table").tablesorter({ 
-        // sort on the first column and third column, order asc 
-        sortList: [[1,1]] 
-    }); 
-}); 
-    	</script>
-
-		<div class="container">
-
-			<!-- LEFT -->
-
-					<table id="headings">
-						<thead>
-							<tr class="top">
-								<th class="one"></th>
-								<th class="two"></th>
-								<th class="three">Votes</th>
-								<th class="four">Win %</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td class="one"><p class="try">Try on <a href="http://fontdeck.com/typeface/apercu" target="_blank">Font Deck</a></p></td>
-								<td class="two"><span value="Font Deck" href="http://fontdeck.com/typeface/apercu" id="Apercu" value="Google">Apercu</span></td>
-								<td class="three">1023</td>
-								<td class="four">60%</td>
-							</tr>
-							<tr>
-								<td class="one"><p class="try">Try on <a href="https://typekit.com/fonts/minion-pro" target="_blank">Typekit</a></p></td>
-								<td class="two"><span value="Typekit" href="https://typekit.com/fonts/minion-pro" id="minion" style="font-family:minion">Minion Pro</span></td>
-								<td class="three">1011</td>
-								<td class="four">65%</td>
-							</tr>
-							<tr>
-								<td class="one"><p class="try">Try on <a href="http://www.myfonts.com/fonts/linotype/neue-helvetica/" target="_blank">My Fonts</a></p></td>
-								<td class="two"><span value="My Fonts" href="http://www.myfonts.com/fonts/linotype/neue-helvetica/" id="helvetica" style="font-family:helvetica">Helvetica</span></td>
-								<td class="three">968</td>
-								<td class="four">49%</td>
-							</tr>
-							<tr>
-								<td class="one"><p class="try">Try on <a href="http://www.myfonts.com/fonts/bitstream/futura/" target="_blank">My Fonts</a></p></td>
-								<td class="two"><span value="My Fonts" href="http://www.myfonts.com/fonts/bitstream/futura/" id="Futura" style="font-family:Futura">Futura</span></td>
-								<td class="three">521</td>
-								<td class="four">30%</td>
-							</tr>
-							<tr>
-								<td class="one"><p class="try">Try on <a href="http://www.myfonts.com/fonts/microsoft/georgia/" target="_blank">My Fonts</a></p></td>
-								<td class="two"><span value="My Fonts" href="http://www.myfonts.com/fonts/microsoft/georgia/" id="Georgia" style="font-family:Georgia">Georgia</span></td>
-								<td class="three">417</td>
-								<td class="four">28%</td>
-							</tr>
-							<tr>
-								<td class="one"><p class="try">Try on <a href="http://www.myfonts.com/fonts/mti/gill-sans/" target="_blank">My Fonts</a></p></td>
-								<td class="two"><span value="My Fonts" href="http://www.myfonts.com/fonts/mti/gill-sans/" id="Gill Sans" style="font-family:Gill Sans">Gills Sans</span></td>
-								<td class="three">403</td>
-								<td class="four">24%</td>
-							</tr>
-							<tr>
-								<td class="one"><p class="try">Try on <a href="http://www.myfonts.com/fonts/microsoft/courier-new/" target="_blank">My Fonts</a></p></td>
-								<td class="two"><span value="My Fonts" href="http://www.myfonts.com/fonts/microsoft/courier-new/" id="Courier New" style="font-family:Courier New">Courier New</span></td>
-								<td class="three">200</td>
-								<td class="four">7%</td>
-							</tr>
-						</tbody>
-					</table>
-			</div>	
+	<!-- LEFT -->
+  <table id="headings">
+    <thead>
+		  <tr class="top">
+		    <th class="one"></th>
+		    <th class="two"></th>
+			  <th class="three">Votes</th>
+			  <th class="four">Win %</th>
+		  </tr>
+	  </thead>
+  
+    <tbody>
+      <% @fonts.each do |font| %>
+        <tr>
+        <td class="two"><span value=<%= font.source %> href=<%= font.link %> id=<%= font.name %> style=<%= font.style %> ><%= font.title %></span></td>
+          <td><%= font.link %></td>
+          <td><%= font.votes %></td>
+        </tr>
+      <% end %> 
+    </tbody>
+  </table>
+</div>	
 
 		
 

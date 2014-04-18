@@ -1,0 +1,51 @@
+<% provide(:title, '| Home | Index') %>
+
+<nav><span><a href="/leaderboard">Leaderboard</a></span></nav>
+
+<% javascript 'index' %>
+
+<div id="info">
+  <div class="info top"><%= @font_1.title %></div>
+  <div class="info bottom"><%= @font_2.title %></div>
+</div>
+  
+<div id="try">
+  <p class="try top">Try on <%= link_to @font_1.source, @font_1.link%></p>
+  <p class="try bottom">Try on <%= link_to @font_2.source, @font_2.link%></p>
+</div>
+
+<div class="container">
+
+  <!-- top -->
+
+  <div class="votearea" id="heading_vote">
+		<div id="headingchamp" rows="1">
+      <span class="text" value=<%= @font_1.source %> href=<%= @font_1.link %> id=<%= @font_1.name %> style=<%= @font_1.style %> ><%= @font_1.title %></span>
+    </div>
+  </div>
+  
+	<!-- middle -->
+      
+	<div class="middle">
+ 		<div class="buttons" id="i"><%= image_tag "i.png" %></div>
+    <div class="divider"></div>
+    <div class="buttons" id="plus"><%= image_tag "plus.png" %></div>
+    <%= link_to "", "", :method => "get", :class => "next" %>
+    <div class="controls" id="controls">
+      <div class="controlbutton"><p id="title">Title</p></div>
+      <div class="controlbutton"><p id="upper">ABC</p></div>
+      <div class="controlbutton"><p id="lower">abc</p></div>
+    </div>
+	</div>
+      
+	<!-- bottom -->
+    
+  <div class="votearea" id="challenger_vote">
+		<div id="headingchamp" rows="1">
+      <span class="text" value=<%= @font_2.source %> href=<%= @font_2.link %> id=<%= @font_2.name %> style=<%= @font_2.style %> ><%= @font_2.title %></span>
+    </div>
+  </div>
+      
+	<!-- -->
+      
+</div>

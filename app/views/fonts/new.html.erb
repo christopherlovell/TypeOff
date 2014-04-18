@@ -1,0 +1,47 @@
+<br><br><br><br><br><br><br><br>
+
+<%= link_to 'Back', fonts_path %><br><br>
+
+<%= form_for :font, url: fonts_path do |f| %>
+
+  <% if @font.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@font.errors.count, "error") %> prohibited
+        this font from being saved:</h2>
+      <ul>
+      <% @font.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :link %><br>
+    <%= f.text_field :link %>
+  </p>
+  
+  <p>
+    <%= f.label :source %><br>
+    <%= f.text_field :source %>
+  </p>
+  
+  <p>
+    <%= f.label :style %><br>
+    <%= f.text_field :style %>
+  </p>
+  
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

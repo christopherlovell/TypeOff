@@ -1,0 +1,35 @@
+<br><br><br><br><br><br><br><br>
+
+<%= link_to 'New Font', new_font_path %> | 
+<%= link_to 'List Fonts', fonts_path %> | 
+<%= link_to 'Edit Font', edit_font_path %>
+
+<p>
+  <strong>Font Title</strong>
+  <%= @font.title %>
+</p>
+
+<p>
+  <strong>ID</strong>
+  <%= @font.name %>
+</p>
+
+<p>
+  <strong>Link URL</strong>
+  <%= @font.link %>
+</p>
+
+<p>
+  <strong>Link Source</strong>
+  <%= @font.source %>
+</p>
+
+<p>
+  <strong>Font Style</strong>
+  <%= @font.style %>
+</p>
+
+<p>
+  <strong>Votes</strong>
+  <%= @font.votes %>
+</p>

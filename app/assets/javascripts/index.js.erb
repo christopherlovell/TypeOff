@@ -1,27 +1,19 @@
 
 $(document).ready(function(){
   
+  var font1 = $("#font1").html();
+  var font2 = $("#font2").html();
+  
   $("#try").hide();
   $("#info").hide();
   $("#controls").hide();
-		
-  $("#title").on("click",function(){
+  
+  $("#title").click(function(){
 	  $(this).css("opacity", 1);
 	  $("#upper").css("opacity", 0.5);
 	  $("#lower").css("opacity", 0.5);
-    $("#headingchamp").html('<%= h @font_1.title %>');
-    $("#challenger").html('<%= h @font_2.title %>');
-	});
-  
-  $("#heading_vote").click(function(){
-  
-    var fontid='<%= h @font_1.id %>'
-    $(".text").html(fontid);
-    $.ajax({
-      type: "POST", url: 'fonts/'+fontid+'/vote', success: function(){
-        $(".text").html('voted');
-      }
-    });
+    $("#font1").html(font1);
+    $("#font2").html(font2);
   });
   
 	$("#upper").on("click",function(){

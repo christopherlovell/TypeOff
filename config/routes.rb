@@ -6,7 +6,7 @@ TypeOff::Application.routes.draw do
   
   get '/leaderboard' => 'home#leaderboard'
   
-  post '/fonts/:id/vote' => 'fonts#vote', as: :vote
+  post '/fonts/:id1/:id2/vote' => 'fonts#vote', as: :vote
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

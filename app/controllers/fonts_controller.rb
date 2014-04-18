@@ -22,9 +22,18 @@ class FontsController < ApplicationController
   
   #increment votes variable for given Font
   def vote
-    @font = Font.find(params[:id])
+    @font1 = Font.find(params[:id1])
+    @font2 = Font.find(params[:id2])
     
-    @font.increment!(:votes)
+    @font1.increment!(:votes)
+    
+    @vote = Vote.new
+    @vote.winner = params[:id1]
+    @vote.loser = params[:id2]
+    
+    @count1, @count2 = count_votes
+    
+    Rails.logger.debug("My object: #{@count1.inspect}")
     
     respond_to do |format|
       format.js {render :json => params[:id]}
@@ -36,7 +45,7 @@ class FontsController < ApplicationController
   end
   
   def leaderboard
-    @fonts = Font.all
+    @votes = Vote.all
   end
   
   def edit
@@ -62,6 +71,16 @@ class FontsController < ApplicationController
   private
     def font_params
       params.require(:font).permit(:name,:title,:link,:source,:style,:votes)
+    end
+    
+    def count_votes
+      @count1 = Vote.where(winner: @font1.id).count
+      @count2 = Vote.where(winner: @font2.id).count
+      
+      return @count1,@count2
+      
+      #@percentage1 = @count1 / @count2
+      #@percentage2 = @count2 / @count1
     end
   
 end

@@ -21,7 +21,9 @@
     <tbody>
       <% @fonts.each do |font| %>
         <tr>
-        <td class="two"><span value=<%= font.source %> href=<%= font.link %> id=<%= font.name %> style=<%= font.style %> ><%= font.title %></span></td>
+          <td class="two">
+            <span value=<%= font.source %> href=<%= font.link %> id=<%= font.name %> style=<%= font.style %> ><%= font.title %></span>
+          </td>
           <td><%= font.link %></td>
           <td><%= font.votes %></td>
         </tr>

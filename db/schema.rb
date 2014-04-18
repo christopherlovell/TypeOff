@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131214144610) do
+ActiveRecord::Schema.define(version: 20140201160148) do
 
   create_table "fonts", force: true do |t|
     t.string   "title",      null: false
@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(version: 20131214144610) do
     t.string   "source",     null: false
     t.string   "style",      null: false
     t.integer  "votes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "votes", force: true do |t|
+    t.integer  "winner"
+    t.integer  "loser"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

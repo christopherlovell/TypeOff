@@ -27,9 +27,9 @@ class FontsController < ApplicationController
     
     @font1.increment!(:votes)
     
-    @vote = Vote.new
-    @vote.winner = params[:id1]
-    @vote.loser = params[:id2]
+    #@vote = Vote.new
+    #@vote.winner = params[:id1]
+    #@vote.loser = params[:id2]
     
     @count1, @count2 = count_votes
     
@@ -73,7 +73,7 @@ class FontsController < ApplicationController
       params.require(:font).permit(:name,:title,:link,:source,:style,:votes)
     end
     
-    def count_votes
+    def count_votes()
       @count1 = Vote.where(winner: @font1.id).count
       @count2 = Vote.where(winner: @font2.id).count
       

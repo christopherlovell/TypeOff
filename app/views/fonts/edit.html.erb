@@ -14,9 +14,11 @@
       </ul>
     </div>
   <% end %>
+  
   <p>
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title %><br>
+    <%= f.errors.full_messages %>
   </p>
  
   <p>

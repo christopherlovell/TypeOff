@@ -2,14 +2,17 @@
 <html>
 	<head>
 		<title>Type Off <%= yield(:title) %></title>
+    
 		<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    
     <%= csrf_meta_tags %>
+    
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    
 	</head>
   <body>
     <div class="logobg"></div>
     <div class="logo"><a href="#"><%= image_tag "logo.png" %></a></div>
-    
     
     <%= yield :head %>
     

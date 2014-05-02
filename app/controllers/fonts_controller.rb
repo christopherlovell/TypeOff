@@ -2,6 +2,8 @@ class FontsController < ApplicationController
   
   protect_from_forgery except: :index
   
+  respond_to :html, :xml, :json
+  
   def new
     @font = Font.new()
   end
@@ -22,23 +24,25 @@ class FontsController < ApplicationController
   
   #increment votes variable for given Font
   def vote
-    #@font1 = Font.find(params[:id1])
-    #@font2 = Font.find(params[:id2])
+    @font1 = Font.find(params[:id1])
+    @font2 = Font.find(params[:id2])
     
-    #@font1.increment!(:votes)
+    @font1.increment!(:votes)
     
     @vote = Vote.new()
     @vote.winner = params[:id1]
     @vote.loser = params[:id2]
     @vote.created_at = Time.now
     @vote.updated_at = Time.now
+    @vote.save
     
-    @count1, @count2 = count_votes
+    @count1, @count2, @percentage1, @percentage2 = count_votes
     
-    Rails.logger.debug("My object: #{@count1.inspect}")
+    Rails.logger.debug("My object: #{@percentage1.inspect}")
+    Rails.logger.debug("My object: #{@percentage2.inspect}")
     
     respond_to do |format|
-      format.js {render :json => params[:id]}
+      format.js {}
     end
   end
   
@@ -79,10 +83,10 @@ class FontsController < ApplicationController
       @count1 = Vote.where(winner: params[:id1]).count
       @count2 = Vote.where(winner: params[:id2]).count
       
-      return @count1,@count2
+      @percentage1 = '%.0f' % (100 * @count1.to_f / (@count1+@count2))
+      @percentage2 = '%.0f' % (100 * @count2.to_f / (@count1+@count2))
       
-      #@percentage1 = @count1 / @count2
-      #@percentage2 = @count2 / @count1
+      return @count1,@count2,@percentage1,@percentage2      
     end
   
 end

@@ -7,21 +7,29 @@
 <script>
 $(document).ready(function(){
   $("#heading_vote").click(function(){
-      $.ajax({
-        type: "POST", url: 'fonts/'+'<%= @font_1.id %>'+'/'+'<%= @font_2.id %>'+'/vote', success: function(){
-          alert('<%= @count2 %>')
-          $("#font1").html('<%= @count1 %>');
-        }
-      });
+    $.ajax({
+      type: "POST",
+      url: 'fonts/'+'<%= @font_1.id %>'+'/'+'<%= @font_2.id %>'+'/vote',
+      //data: {key: value},
+      dataType : 'script',
+      //success: function(){
+      //  alert('<%= @count1.inspect %>')
+      //  $("#font1").html('<%= @count1.inspect %>');
+      //}
     });
-    
-    $("#challenger_vote").click(function(){
-      $.ajax({
-        type: "POST", url: 'fonts/'+'<%= @font_2.id %>'+'/'+'<%= @font_1.id %>'+'/vote', success: function(){
-          $("#font2").html('<%= @count2 %>');
-        }
-      });
+  });
+  
+  $("#challenger_vote").click(function(){
+    $.ajax({
+      type: "POST",
+      url: 'fonts/'+'<%= @font_2.id %>'+'/'+'<%= @font_1.id %>'+'/vote',
+      //data: {key: value},
+      dataType : 'script',
+      //success: function(){
+      //  $("#font2").html('<%= @count2.inspect %>');
+      //}
     });
+  });  
 });
 </script>
 

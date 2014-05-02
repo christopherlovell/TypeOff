@@ -23,12 +23,7 @@ class FontsController < ApplicationController
   end
   
   #increment votes variable for given Font
-  def vote
-    @font1 = Font.find(params[:id1])
-    @font2 = Font.find(params[:id2])
-    
-    @font1.increment!(:votes)
-    
+  def vote    
     @vote = Vote.new()
     @vote.winner = params[:id1]
     @vote.loser = params[:id2]
@@ -48,10 +43,6 @@ class FontsController < ApplicationController
   
   def index
     @fonts = Font.all
-  end
-  
-  def leaderboard
-    @votes = Vote.all
   end
   
   def edit

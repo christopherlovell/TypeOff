@@ -9,10 +9,10 @@
   <table id="headings">
     <thead>
 		  <tr class="top">
-		    <th class="one"></th>
 		    <th class="two"></th>
-			  <th class="three">Votes</th>
-			  <th class="four">Win %</th>
+			  <th class="three">Link</th>
+			  <th class="four">Win%</th>
+        <th class="five">Votes</th>
 		  </tr>
 	  </thead>
     
@@ -20,10 +20,11 @@
       <% @fonts.each do |font| %>
         <tr>
           <td class="two">
-            <span value=<%= font.source %> href=<%= font.link %> id=<%= font.name %> style=<%= font.style %> ><%= font.title %></span>
+            <span style=<%= font.style %> ><%= font.title %></span>
           </td>
-          <td><%= font.link %></td>
-          <td><%= font.votes %></td>
+          <td class="three"><%= font.link %></td>
+          <td class="four"> </td>
+          <td class="five"></td>
         </tr>
       <% end %> 
     </tbody>

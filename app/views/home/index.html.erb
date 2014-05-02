@@ -50,14 +50,14 @@ $(document).ready(function(){
  		<div class="buttons" id="i"><%= image_tag "i.png" %></div>
     <div class="divider"></div>
     <div class="buttons" id="plus"><%= image_tag "plus.png" %></div>
-    <%= link_to "", "", :method => "get", :class => "next" %>
     <div class="controls" id="controls">
       <div class="controlbutton"><p id="title">Title</p></div>
       <div class="controlbutton"><p id="upper">ABC</p></div>
       <div class="controlbutton"><p id="lower">abc</p></div>
     </div>
+    <%= link_to "", "", :method => :get, :class => 'next', :id => 'next' %>
 	</div>
-      
+
 	<!-- bottom -->
     
   <div class="votearea" id="challenger_vote">

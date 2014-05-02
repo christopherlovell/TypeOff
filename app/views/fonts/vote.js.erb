@@ -1,6 +1,12 @@
+// fade in percentages after vote
+$('#font1').hide().html("<%= @percentage1 %>"+"%"). fadeIn('slow');
+$('#font2').hide().html("<%= @percentage2 %>"+"%").fadeIn('slow');
 
-$('#font1').html("<%= @percentage1 %>"+"%");
-$('#font2').html("<%= @percentage2 %>"+"%");
-
+// stop multiple votes from being cast after a ingle vote
 $("#heading_vote").unbind("click");
 $("#challenger_vote").unbind("click");
+
+// fade in options after vote
+$("#try").fadeToggle();
+$("#info").fadeToggle();
+$("#next").fadeToggle();

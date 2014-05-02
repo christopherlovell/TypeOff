@@ -12,10 +12,6 @@ $(document).ready(function(){
       url: 'fonts/'+'<%= @font_1.id %>'+'/'+'<%= @font_2.id %>'+'/vote',
       //data: {key: value},
       dataType : 'script',
-      //success: function(){
-      //  alert('<%= @count1.inspect %>')
-      //  $("#font1").html('<%= @count1.inspect %>');
-      //}
     });
   });
   
@@ -25,9 +21,6 @@ $(document).ready(function(){
       url: 'fonts/'+'<%= @font_2.id %>'+'/'+'<%= @font_1.id %>'+'/vote',
       //data: {key: value},
       dataType : 'script',
-      //success: function(){
-      //  $("#font2").html('<%= @count2.inspect %>');
-      //}
     });
   });  
 });

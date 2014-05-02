@@ -4,7 +4,7 @@ To obtain this directory clone from GitHub URL:
 
 git clone git@github.com:polyphant1/TypeOff.git
 
-Configured to work with Ruby 2.0.
+Configured to Ruby 4.0.
 
 SQ-Lite3 should be installed as standard for Heroku compatibility. All default Gems given in the Gemfile.
 To view your currently installed Ruby gems run 'gem list'

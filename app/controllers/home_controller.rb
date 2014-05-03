@@ -1,3 +1,7 @@
+class Leader
+  attr_accessor :winner, :loser, :percentage, :font
+end
+
 class HomeController < ApplicationController
   def index
     @font_1 = Font.first(:offset => rand(Font.count))
@@ -10,16 +14,22 @@ class HomeController < ApplicationController
   end
     
   def leaderboard
-    @votes = Vote.all
+    @fonts = Font.all
+    @leader_array = Array.new 
     
-    # create a vote hash with font ID as the key
-    @count = hash.new()
-    
-    @font.each do |font|
-      @count[vote.winner] = Vote.where(winner: params[:]).count
+    @fonts.each do |font|
+      leader = Leader.new
+      leader.winner = Vote.where(winner: font.id).count
+      leader.loser = Vote.where(loser: font.id).count
+      leader.font = font
+      
+      leader.percentage = '%.0f' % (100 *(leader.winner.to_f / (leader.loser + leader.winner)))
+      @leader_array << leader
     end
     
     
+    @leader_array.sort!{|a,b| b.winner <=> a.winner}
     
+    return @leader_array
   end
 end

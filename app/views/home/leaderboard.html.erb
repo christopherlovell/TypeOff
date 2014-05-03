@@ -9,22 +9,19 @@
   <table id="headings">
     <thead>
 		  <tr class="top">
-		    <th class="two"></th>
-			  <th class="three">Link</th>
-			  <th class="four">Win%</th>
-        <th class="five">Votes</th>
+			  <th class="three">Win%</th>
+        <th class="four">Votes</th>
 		  </tr>
 	  </thead>
     
     <tbody>
-      <% @fonts.each do |font| %>
+      <% @leader_array.each do |leader| %>
         <tr>
           <td class="two">
-            <span style=<%= font.style %> ><%= font.title %></span>
+            <span style=<%= leader.font.style %> ><%= leader.font.title %></span>
           </td>
-          <td class="three"><%= font.link %></td>
-          <td class="four"> </td>
-          <td class="five"></td>
+          <td class="four"><%= leader.percentage %>%</td>
+          <td class="five"><%= leader.winner %></td>
         </tr>
       <% end %> 
     </tbody>

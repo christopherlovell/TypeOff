@@ -33,9 +33,6 @@ class FontsController < ApplicationController
     
     @count1, @count2, @percentage1, @percentage2 = count_votes
     
-    Rails.logger.debug("My object: #{@percentage1.inspect}")
-    Rails.logger.debug("My object: #{@percentage2.inspect}")
-    
     respond_to do |format|
       format.js {}
     end

@@ -9,17 +9,17 @@ class HomeController < ApplicationController
     end
   end
     
-  def leaderboard
-    @votes = Vote.all
+  #def leaderboard
+   # @votes = Vote.all
     
-    # create a vote hash with font ID as the key
-    @count = hash.new()
+   # # create a vote hash with font ID as the key
+   # @count = hash.new()
     
-    @font.each do |font|
-      @count[vote.winner] = Vote.where(winner: params[:]).count
-    end
+  #  @font.each do |font|
+  #    @count[vote.winner] = Vote.where(winner: params[:]).count
+  #  end
     
     
     
-  end
+  #end
 end

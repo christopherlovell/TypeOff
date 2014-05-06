@@ -13,6 +13,7 @@ class HomeController < ApplicationController
     end
   end
     
+<<<<<<< HEAD
   def leaderboard
     @fonts = Font.all
     @leader_array = Array.new 
@@ -26,10 +27,25 @@ class HomeController < ApplicationController
       leader.percentage = '%.0f' % (100 *(leader.winner.to_f / (leader.loser + leader.winner)))
       @leader_array << leader
     end
+=======
+  #def leaderboard
+   # @votes = Vote.all
+    
+   # # create a vote hash with font ID as the key
+   # @count = hash.new()
+    
+  #  @font.each do |font|
+  #    @count[vote.winner] = Vote.where(winner: params[:]).count
+  #  end
+>>>>>>> 1c86a4066d5b3c0188b1e04f73c483447876da61
     
     
     @leader_array.sort!{|a,b| b.winner <=> a.winner}
     
+<<<<<<< HEAD
     return @leader_array
   end
+=======
+  #end
+>>>>>>> 1c86a4066d5b3c0188b1e04f73c483447876da61
 end

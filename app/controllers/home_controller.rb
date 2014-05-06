@@ -26,8 +26,7 @@ class HomeController < ApplicationController
       leader.percentage = '%.0f' % (100 *(leader.winner.to_f / (leader.loser + leader.winner)))
       @leader_array << leader
     end
-    
-    
+
     @leader_array.sort!{|a,b| b.winner <=> a.winner}
     
     return @leader_array

@@ -8,24 +8,33 @@ $(document).ready(function(){
   $("#info").hide();
   
   $("#title").click(function(){
-	  $(this).css("opacity", 1);
-	  $("#upper").css("opacity", 0.5);
-	  $("#lower").css("opacity", 0.5);
+	  $(this).css("background", 'white');
+    $(this).css("color", 'black');
+	  $("#upper").css("background", 'none');
+	  $("#lower").css("background", 'none');
+    $("#upper").css("color", 'white');
+    $("#lower").css("color", 'white');
     $("#font1").html(font1);
     $("#font2").html(font2);
   });
   
 	$("#upper").on("click",function(){
-	  $(this).css("opacity", 1);
-	  $("#title").css("opacity", 0.5);
-	  $("#lower").css("opacity", 0.5);
+	  $(this).css("background", 'white');
+    $(this).css("color", 'black');
+	  $("#title").css("background", 'none');
+	  $("#lower").css("background", 'none');
+    $("#title").css("color", 'white');
+    $("#lower").css("color", 'white');
 	  $(".text").html("ABCDEFGH<br>IJKLMNOPQR<br>STUVWXYZ");
 	});
 
 	$("#lower").on("click",function(){
-	  $(this).css("opacity", 1);
-	  $("#title").css("opacity", 0.5);
-	  $("#upper").css("opacity", 0.5);
+	  $(this).css("background", 'white');
+    $(this).css("color", 'black');
+	  $("#title").css("background", 'none');
+	  $("#upper").css("background", 'none');
+    $("#title").css("color", 'white');
+    $("#upper").css("color", 'white');
 	  $(".text").html("abcdefgh<br>ijklnopqr<br>stuvwxyz");
   });
 

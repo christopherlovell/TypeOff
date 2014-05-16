@@ -6,7 +6,6 @@ $(document).ready(function(){
   
   $("#try").hide();
   $("#info").hide();
-  $("#controls").hide();
   
   $("#title").click(function(){
 	  $(this).css("opacity", 1);
@@ -30,13 +29,13 @@ $(document).ready(function(){
 	  $(".text").html("abcdefgh<br>ijklnopqr<br>stuvwxyz");
   });
 
-  $("#plus").click(function(){
-    $("#controls").slideToggle("slow");
-  });
-
   $("#i").on("click",function(){
     $("#try").fadeToggle();
     $("#info").fadeToggle();
+  });
+
+  $(".logo").on("click",function(){
+    $( "#infotwo" ).slideToggle();
   });
 
 });

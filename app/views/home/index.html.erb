@@ -1,7 +1,5 @@
 <% provide(:title, '| Home | Index') %>
 
-<nav><span><a href="/leaderboard">Leaderboard</a></span></nav>
-
 <%= javascript_include_tag params[:index] %>
 
 <script>
@@ -38,6 +36,14 @@ $(document).ready(function(){
 
 <div class="container">
 
+  <a href="/leaderboard"><div class="controlbutton" id="leaderboard"></div></a>
+
+  <ul id="controls">
+    <li id="title"></li>
+    <li id="upper"></li>
+    <li id="lower"></li>
+  </ul>
+
   <!-- top -->
 
   <div class="votearea" id="heading_vote">
@@ -45,10 +51,8 @@ $(document).ready(function(){
   </div>
   
 	<!-- middle -->
-      
-      <div class="controlbutton"><p id="title">Title</p></div>
-      <div class="controlbutton"><p id="upper">ABC</p></div>
-      <div class="controlbutton"><p id="lower">abc</p></div>
+
+  <div id="infotwo"></div>
 
     <%= link_to "", "", :method => :get, :class => 'next', :id => 'next' %>
 

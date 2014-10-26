@@ -36,6 +36,7 @@ end
 
 group :development do
   gem 'sqlite3', '1.3.8'
+  gem 'meta_request'
 end
 
 group :production do

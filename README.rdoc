@@ -1,27 +1,14 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To obtain this directory clone from GitHub URL:
 
-Things you may want to cover:
+git clone git@github.com:polyphant1/TypeOff.git
 
-* Ruby version
+Configured to Ruby 4.0.
 
-* System dependencies
+SQ-Lite3 should be installed as standard for Heroku compatibility. All default Gems given in the Gemfile.
+To view your currently installed Ruby gems run 'gem list'
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
 
 Please feel free to use a different markup language if you do not plan to run

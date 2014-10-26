@@ -6,30 +6,24 @@
 <% javascript 'leaderboard' %>
 
 <div class="container">
-
-	<!-- LEFT -->
   <table id="headings">
     <thead>
 		  <tr class="top">
-		    <th class="one"></th>
-		    <th class="two"></th>
-			  <th class="three">Votes</th>
-			  <th class="four">Win %</th>
+			  <th class="three">Win%</th>
+        <th class="four">Votes</th>
 		  </tr>
 	  </thead>
-  
+    
     <tbody>
-      <% @fonts.each do |font| %>
+      <% @leader_array.each do |leader| %>
         <tr>
-        <td class="two"><span value=<%= font.source %> href=<%= font.link %> id=<%= font.name %> style=<%= font.style %> ><%= font.title %></span></td>
-          <td><%= font.link %></td>
-          <td><%= font.votes %></td>
+          <td class="two">
+            <span style=<%= leader.font.style %> ><%= leader.font.title %></span>
+          </td>
+          <td class="four"><%= leader.percentage %>%</td>
+          <td class="five"><%= leader.winner %></td>
         </tr>
       <% end %> 
     </tbody>
   </table>
-</div>	
-
-		
-
-		
+</div>			

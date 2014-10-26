@@ -5,7 +5,7 @@ class Font < ActiveRecord::Base
   validates :source, presence: true, length: { minimum: 5 }
   validates :style, presence: true, length: { minimum: 5 }
   
-  #set defauls value for votes variable
+  #set default value for votes variable
   before_save :default_values
   def default_values
     self.votes ||= '0'

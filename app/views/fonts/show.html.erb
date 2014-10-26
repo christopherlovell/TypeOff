@@ -2,7 +2,8 @@
 
 <%= link_to 'New Font', new_font_path %> | 
 <%= link_to 'List Fonts', fonts_path %> | 
-<%= link_to 'Edit Font', edit_font_path %>
+<%= link_to 'Edit Font', edit_font_path %> |
+<%= link_to 'Destroy', fonts_path, method: :delete, data: { confirm: 'Are you sure?' } %>
 
 <p>
   <strong>Font Title</strong>

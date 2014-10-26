@@ -1,0 +1,50 @@
+$(document).ready(function(){
+  
+  // allows switching back to name of font in Title option
+  var font1 = $("#font1").html();
+  var font2 = $("#font2").html();
+  
+  $("#try").hide();
+  $("#info").hide();
+  
+  $("#title").click(function(){
+	  $(this).css("background", 'white');
+    $(this).css("color", 'black');
+	  $("#upper").css("background", 'none');
+	  $("#lower").css("background", 'none');
+    $("#upper").css("color", 'white');
+    $("#lower").css("color", 'white');
+    $("#font1").html(font1);
+    $("#font2").html(font2);
+  });
+  
+	$("#upper").on("click",function(){
+	  $(this).css("background", 'white');
+    $(this).css("color", 'black');
+	  $("#title").css("background", 'none');
+	  $("#lower").css("background", 'none');
+    $("#title").css("color", 'white');
+    $("#lower").css("color", 'white');
+	  $(".text").html("ABCDEFGH<br>IJKLMNOPQR<br>STUVWXYZ");
+	});
+
+	$("#lower").on("click",function(){
+	  $(this).css("background", 'white');
+    $(this).css("color", 'black');
+	  $("#title").css("background", 'none');
+	  $("#upper").css("background", 'none');
+    $("#title").css("color", 'white');
+    $("#upper").css("color", 'white');
+	  $(".text").html("abcdefgh<br>ijklnopqr<br>stuvwxyz");
+  });
+
+  $("#i").on("click",function(){
+    $("#try").fadeToggle();
+    $("#info").fadeToggle();
+  });
+
+  $(".logo").on("click",function(){
+    $( "#infotwo" ).slideToggle();
+  });
+
+});

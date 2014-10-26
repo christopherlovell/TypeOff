@@ -1,5 +1,7 @@
 <br><br><br><br><br><br><br><br>
 
+<%= javascript_include_tag "application" %>
+
 <h1> List Fonts </h1>
 
 <%= link_to 'New Font', new_font_path %><br><br>
@@ -24,10 +26,9 @@
       <td><%= font.link %></td>
       <td><%= font.source %></td>
       <td><%= font.style %></td>
-      <td><%= font.votes %></td>
       <td><%= link_to 'Show', font_path(font) %></td>
       <td><%= link_to 'Edit', edit_font_path(font) %></td>
-      <td><%= link_to 'Destroy', font_path(font), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Destroy', font_path(font), method: :delete, data: {confirm: 'Are you sure?'} %></td>
     </tr>
   <% end %>  
 </table>
